@@ -44,6 +44,8 @@ public class Hook {
             System.setProperty("webdriver.chrome.driver", currentWorkingDirectory + Env.DRIVER_PATH);
         } else if (System.getProperty("browser").equals("chrome-headless")) {
             options.addArguments("--headless");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
         }
 
         Hook.webDriver = new ChromeDriver(options);
